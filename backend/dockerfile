@@ -1,0 +1,17 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# ចម្លងឯកសារ dependencies
+COPY package*.json ./
+
+# ដំឡើង dependencies (រួមទាំង tsx/typescript)
+RUN npm install
+
+# ចម្លងកូដ backend ទាំងអស់ចូល
+COPY . .
+
+EXPOSE 5000
+
+# រត់ command តាមរយៈ script dev ក្នុង package.json (ដែលប្រើ tsx ឬ nodemon)
+CMD ["npm", "run" , "dev"]

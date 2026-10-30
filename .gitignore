@@ -1,0 +1,21 @@
+# ដក node_modules ទាំងក្នុង backend និង frontend ស្វ័យប្រវត្ត
+**/node_modules/
+**/.pnpm-store/
+
+# ដកឯកសារសម្ងាត់ (.env គ្រប់ទីកន្លែង)
+.env
+**/.env.local
+**/.env.development
+**/.env.production
+
+# ដក folder លទ្ធផល build (ដូចជា dist របស់ Vite frontend)
+**/dist/
+**/.next/
+**/build/
+
+# ដកឯកសារ log និងឯកសារប្រព័ន្ធម៉ាស៊ីន Mac
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db

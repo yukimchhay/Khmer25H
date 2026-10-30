@@ -1,0 +1,20 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# ដំឡើង pnpm ជាសកលនៅក្នុង container
+RUN npm install -g pnpm
+
+# ចម្លងឯកសារ dependencies 
+COPY package.json pnpm-lock.yaml* ./
+
+# រត់ install ជាមួយ pnpm
+RUN pnpm install
+
+# ចម្លងកូដ frontend ទាំងអស់
+COPY . .
+
+EXPOSE 5173
+
+# រត់ Vite dev server សម្រាប់ frontend
+CMD ["pnpm", "run", "dev", "--host"]
