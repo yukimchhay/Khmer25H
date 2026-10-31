@@ -1,9 +1,12 @@
-import React from 'react'
+// client/src/App.tsx
+import { RouterProvider } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
+import { router } from "./routers/router";
 
-const App = () => {
+export default function App() {
   return (
-    <div className='bg-blue-700'>App</div>
-  )
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  );
 }
-
-export default App
